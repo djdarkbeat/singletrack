@@ -1,0 +1,23 @@
+html, body {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+h1 {
+	margin-left: -2000px;
+	font-size: 2em;
+	text-align: center;
+}
+#show_message	{
+
+}
+
+.hideme {
+//display:none;
+}
+
+div.content {
+	text-align: left;
+	min-height:500px;
+}

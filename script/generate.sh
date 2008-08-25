@@ -1,0 +1,48 @@
+#!/bin/sh
+
+mkdir app
+	cd app
+	mkdir controllers
+		cd controllers
+		touch application.inc
+		touch adminusers.inc
+		touch customers.inc
+		touch products.inc
+		touch users.inc
+		cd ../
+	mkdir helpers
+		cd helpers
+		touch application_helper.inc
+		cd ../
+	mkdir models
+		cd models
+		touch login.inc
+		cd ../
+	mkdir views
+		cd views
+		mkdir layouts
+			cd layouts
+			touch adminusers.inc
+			touch customers.inc
+			touch products.inc
+			touch users.inc
+			cd ../
+		cd ../
+	cd ../
+mkdir components
+	cd components
+	mkdir inSite
+	mkdir tags
+	touch js_timer.inc
+	cd ../
+mkdir config
+	cd config
+	mkdir environments
+		cd environments
+		touch development.inc
+		touch production.inc
+		touch test.inc
+	mkdir tags
+	touch js_timer.inc
+	cd ../
+exit
