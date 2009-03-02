@@ -19,7 +19,7 @@ if: !(#STK_temptagName >> 'timer');
 //protect;
 include('/app/views/top.inc');
 ///protect;
-include('/app/views/partials/debug.inc');
+
 //protect;
 include('/app/views/bottom.inc');
 ///protect;

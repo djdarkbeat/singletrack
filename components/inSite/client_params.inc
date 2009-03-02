@@ -24,16 +24,17 @@ Latest version available from <http://tagSwap.net/client_params>.
 
 ----------------------------------------------------------------------------*/
 		
-
-define_tag(
-	'params',
-	-namespace='client_',
-	-priority='replace',
-	-description='Returns an array that is a combination of [client_getparams] and [client_postparams].'
-);
-	local('out') = array;
-	#out->merge(client_getparams);
-	#out->merge(client_postparams);
-	return(#out);
-/define_tag;
+if:!(Lasso_TagExists:'client_params');
+	define_tag(
+		'params',
+		-namespace='client_',
+		-priority='replace',
+		-description='Returns an array that is a combination of [client_getparams] and [client_postparams].'
+	);
+		local('out') = array;
+		#out->merge(client_getparams);
+		#out->merge(client_postparams);
+		return(#out);
+	/define_tag;
+/if;
 ]

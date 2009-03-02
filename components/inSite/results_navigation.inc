@@ -73,8 +73,8 @@ Latest version available from <http://tagSwap.net/results_navigation>.
 
 ----------------------------------------------------------------------------*/
 		
-
-define_tag(
+if:!(Lasso_TagExists:'results_navigation');
+	define_tag(
 		'navigation',
 		-namespace='results_',
 		-opt='found', -type='integer',
@@ -181,4 +181,5 @@ define_tag(
 			return(@#out);
 		/if;
 	/define_tag;
+/if;
 ]

@@ -30,4 +30,4 @@
 </head> 
 
 <body onLoad="initialize()">
-<div class="content">&nbsp;<br /><br />
+<div class="content">

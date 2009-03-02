@@ -25,10 +25,6 @@ Downloaded from tagSwap.net on Jun. 05, 2007.
 Latest version available from <http://tagSwap.net/lp_string_firstwords>.
 
 ----------------------------------------------------------------------------*/
-		
-]
-
-[
 
 define_tag:'lp_string_firstwords',
 	-description='Returns the first series of words in a string, up to a max length.',

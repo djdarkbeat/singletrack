@@ -11,17 +11,19 @@ License: Public Domain
 Description:
 
 */
-define_tag(
-    'urldecode',
-    -namespace='cbsm_',
-    -priority='replace',
-    -required='url_string', -Copy,
-    -description='makes the url safe'
-);
-
-#url_string->(Replace:'+',' ') &
-             (Replace:'-','.');
-  
-  	return: @#url_string;
-/define_tag;
+if:!(Lasso_TagExists:'st_urldecode');
+	define_tag(
+	    'urldecode',
+	    -namespace='st_',
+	    -priority='replace',
+	    -required='url_string', -Copy,
+	    -description='makes the url safe'
+	);
+	
+	#url_string->(Replace:'+',' ') &
+	             (Replace:'-','.');
+	  
+	  	return: @#url_string;
+	/define_tag;
+/if;
 ]
