@@ -5,7 +5,7 @@ library:'/app/helpers/application_helper.inc';
 library:'/config/valuelists.inc';
 library:'/app/helpers/routes_helper.inc';
 library:'/config/routes.inc';
-
+library:'/app/helpers/components_helper.inc';
 
 /*
 iterate: $STK_tagList, local:'STK_temptagName';
@@ -17,9 +17,6 @@ if: !(#STK_temptagName >> 'timer');
 // */
 
 //protect;
-include('/app/views/top.inc');
-///protect;
-
 if($STK_Taxonomy);
 /****************************************************************************
 	Check the one that we have a taxonomy
@@ -27,7 +24,7 @@ if($STK_Taxonomy);
 	inline: $dbconn, 
 			-table			='resources', 
 			-op = 'eq',
-			'page_url' = $test	, 
+			'page_url' = $STK_resp	, 
 			-maxrecords = 1,
 			-Search;
 	
@@ -46,7 +43,7 @@ if($STK_Taxonomy);
 		//$inlpageshowingaction;
 		//library:'/components/inSite/categories.inc';
 		rows;
-			encode_smart:(process(column('description')));
+			var('body'=(process(column('description'))));
 			if:	error_currenterror != 'no error';
 			error_currenterror;
 			/if;
@@ -57,6 +54,11 @@ if($STK_Taxonomy);
 	This is the best.
 *****************************************************************************/
 //protect;
+
+include('/app/views/top.inc');
+///protect;
+
+
 include('/app/views/bottom.inc');
 ///protect;
 

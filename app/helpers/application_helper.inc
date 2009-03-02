@@ -15,9 +15,7 @@
 		'STK_StrInclude'				=String,
 		'STK_XTRA_Params'				=Array,
 		'STK_ExtraSitePages'		=(Array:'workshops', 'contact', 'services'),
-	//	'STK_tagList'						=File_ListDirectory: '/components/inSite/',
-//		'STK_tagListTestBase'		='/test/mocks/development/',
-//		'STK_tagListTest'				=File_ListDirectory: $STK_tagListTestBase,
+
 		);
 
 

@@ -14,10 +14,31 @@ h1 {
 }
 
 .hideme {
-//display:none;
+display:none;
 }
 
 div.content {
 	text-align: left;
 	min-height:500px;
+}
+
+.container_16
+{
+	background: #fff url(/public/images/16_col.gif) repeat-y;
+	min-height: 600px;
+}
+
+ul
+{
+	margin-left: 10px;
+}
+
+li
+{
+	margin-left: 10px;
+}
+
+a.action_node
+{
+	text-decoration: none;
 }

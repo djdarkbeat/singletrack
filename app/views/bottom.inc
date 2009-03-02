@@ -1,2 +1,1 @@
-</div></body></html>
-[include:'/app/views/partials/debug.inc']
+</body></html>
