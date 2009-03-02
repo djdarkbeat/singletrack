@@ -1,5 +1,6 @@
 <?LassoScript
 var('STK_Response'				=response_filepath,
+		'STK_LangLink'				=string,
 		'STK_ExtraSitePages'	=array(),
 		'STK_Taxonomy'				=array('pages'),
 		'STK_TableNames'			=array(),
@@ -16,6 +17,7 @@ var('STK_Response'				=response_filepath,
 	iterate: (file_listdirectory:'/app/controllers/'), local('file');		
 		$STK_Controllers->Insert(#file->split('.')->(get(1)));
 		$STK_Controllers->RemoveAll('application');
+		$STK_Controllers->RemoveAll('taxonomy');
 	/iterate;
 
 ?>

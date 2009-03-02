@@ -10,13 +10,15 @@ Var('STK_resp_arr'=	($STK_resp -> (split:'/'))  -> (RemoveAll:'') &);
 	Check for the language links that have to give special priority.
 *****************************************************************************/
 if($STK_Languages >> $STK_resp_arr->(get(1)));
-
-var('STK_LangLink' = $STK_resp_arr->(get(1)));
+	var('STK_LangLink' = $STK_resp_arr->(get(1)));
 	$STK_message->Insert:'You have asked for language links. ' $STK_LangLink;
+	var:'test' = $STK_resp->(RemoveLeading: ('/' $STK_LangLink)) &;
 	$STK_resp_arr->(RemoveFirst);
 else;
 	$STK_message->Insert:'You have asked for no language links. ';
 /if;
+
+
 
 Var:'intLevel'=Integer,
     'strType'=String;
@@ -60,6 +62,7 @@ else;
 	we can execute the code block below.
 *****************************************************************************/
 if($STK_taxonomy >> $STK_controller);
+	include: '/app/controllers/taxonomy.inc';
 	$STK_message->Insert:'You have asked for a taxonomy. ' $STK_controller;
 else;
 	$STK_message->Insert:'This is not a valid taxonomy route. ' $STK_controller;

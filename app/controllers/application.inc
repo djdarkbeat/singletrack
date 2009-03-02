@@ -20,6 +20,42 @@ if: !(#STK_temptagName >> 'timer');
 include('/app/views/top.inc');
 ///protect;
 
+if($STK_Taxonomy);
+/****************************************************************************
+	Check the one that we have a taxonomy
+*****************************************************************************/
+	inline: $dbconn, 
+			-table			='resources', 
+			-op = 'eq',
+			'page_url' = $test	, 
+			-maxrecords = 1,
+			-Search;
+	
+		var('inlpageshowingaction'	=action_statement,
+				'inlpageshowingerror'		=error_currenterror,
+				'inlpageshowingfound'		=found_count
+				);
+		$STK_message->Insert:'You have asked for the taxonomy errors. ' $inlpageshowingerror;
+				/*
+		$test;
+		'<br />';
+		$STK_langlink;
+		'<br />';
+		
+		*/
+		//$inlpageshowingaction;
+		//library:'/components/inSite/categories.inc';
+		rows;
+			encode_smart:(process(column('description')));
+			if:	error_currenterror != 'no error';
+			error_currenterror;
+			/if;
+		/rows;
+	/inline;
+/if;
+/****************************************************************************
+	This is the best.
+*****************************************************************************/
 //protect;
 include('/app/views/bottom.inc');
 ///protect;
