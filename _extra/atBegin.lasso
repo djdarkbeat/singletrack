@@ -1,0 +1,1 @@
+<?LassoScript//[define_atbegin: {if: response_filepath -> (endswith: '.lasso') || 	response_filepath -> (endswith: '.lassoapp') || 	response_filepath -> (endswith: '.inc') || 	response_filepath -> (endswith: '.las');	// dont do anything for normal .lasso and .lassoapp requestselse; $__HTML_REPLY__ = (Include:'/app/controllers/application.inc');		abort;/if;};?>

@@ -44,6 +44,7 @@ if($STK_Taxonomy);
 		//library:'/components/inSite/categories.inc';
 		rows;
 			var('body'=(process(column('description'))));
+			var('html_title'=((column('title'))));
 			if:	error_currenterror != 'no error';
 			error_currenterror;
 			/if;
